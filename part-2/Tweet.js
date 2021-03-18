@@ -19,19 +19,19 @@ const Tweet = (props) => {
       date: "03-15-1896",
     },
   ];
-  const tweetlist = [];
-  for (let tweet of tweets) {
-    tweetlist.push(
-      <div className="card col-sm">
-        <div className="card-body">
-          <h3 className="card-title">
-            {tweet.username} <span>({tweet.name})</span>
-          </h3>
-          <p className="card-text">{tweet.message}</p>
-          <p>{tweet.date}</p>
+  return (
+    <div className="row">
+      {tweets.map((tweet) => (
+        <div className="card col-sm">
+          <div className="card-body">
+            <h3 className="card-title">
+              {tweet.username} <span>({tweet.name})</span>
+            </h3>
+            <p className="card-text">{tweet.message}</p>
+            <p>{tweet.date}</p>
+          </div>
         </div>
-      </div>
-    );
-  }
-  return <div className="row">{tweetlist}</div>;
+      ))}
+    </div>
+  );
 };
